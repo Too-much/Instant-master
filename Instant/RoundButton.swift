@@ -21,13 +21,13 @@ class RoundButton: UIButton {
         layer.cornerRadius = 5
         
         //Couleur de la bordure
-        layer.borderColor = UIColor.red.cgColor
+        layer.borderColor = UIColor.blue.cgColor
         
         //Epaisseur de la bordure
         layer.borderWidth = 2
         
         //Couleur du texte
-        setTitleColor(UIColor.red, for: .normal)
+        setTitleColor(UIColor.blue, for: .normal)
         
         //Padding a gauche et a droite
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)

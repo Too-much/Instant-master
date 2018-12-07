@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        let db = FireStore.firestore()
+        let db =  Firestore.firestore()
+        
+        db.collection("Pellicule").document("Laponie").setData([
+            "name" : "Ours polaire"
+        ]){ Error in
+            if Error == nil{
+                print("Succes document created")
+            } else{
+                print("\(String(describing: Error?.localizedDescription))")
+            }
+        }
         
         return true
     }
