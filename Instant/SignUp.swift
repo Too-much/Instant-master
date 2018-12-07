@@ -39,6 +39,13 @@ class SignUp: UIViewController {
                     changeRequest?.commitChanges{ Error in
                         if Error == nil{
                             print("User display name changed !")
+                            
+                            //On récupère Main.storyboard
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            //On crée une instance d'acceuil à partir du storyboard
+                            let signUp = storyboard.instantiateViewController(withIdentifier: "pellicule") as! ViewController
+                            //On montre le nouveau controller
+                            self.navigationController?.showDetailViewController(signUp, sender: self)
                         }
                     }
                     

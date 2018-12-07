@@ -11,6 +11,20 @@ import Firebase
 
 class Acceuil: UIViewController {
     
+   override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if Auth.auth().currentUser != nil{
+            //On récupère Main.storyboard
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //On crée une instance d'acceuil à partir du storyboard
+            let acceuil = storyboard.instantiateViewController(withIdentifier: "pellicule") as! ViewController
+            //On montre le nouveau controller
+            navigationController?.showDetailViewController(acceuil, sender: self)
+        }
+    }
+    
+    
     @IBAction func lunchLogInViewController(_ sender: Any) {
         //On récupère Main.storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,4 +42,9 @@ class Acceuil: UIViewController {
         //On montre le nouveau controller
         navigationController?.show(acceuil, sender: self)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

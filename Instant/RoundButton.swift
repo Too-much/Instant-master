@@ -30,7 +30,7 @@ class RoundButton: UIButton {
         setTitleColor(UIColor.blue, for: .normal)
         
         //Padding a gauche et a droite
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        contentEdgeInsets = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
         
     }
 }

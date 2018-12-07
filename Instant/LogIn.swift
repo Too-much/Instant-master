@@ -12,7 +12,7 @@ import Firebase
 extension UITextField{
     
     func setBottomBorder(){
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = UIColor.darkGray.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
@@ -32,14 +32,21 @@ class LogIn: UIViewController {
         password.setBottomBorder()
         
     }
-    
+
     @IBAction func logInAuthentification(sender : Any?){
         
         if  email.text != nil && password.text != nil {
             Auth.auth().signIn(withEmail: email.text!, password: password.text!){ User, Error in
                 if Error == nil && User != nil{
-                    print("User created !")
-                    self.alert("Message", message: "User log In sucess")
+                    print("User sign in !")
+                    
+                    //On récupère Main.storyboard
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    //On crée une instance d'acceuil à partir du storyboard
+                    let logIn = storyboard.instantiateViewController(withIdentifier: "pellicule") as! ViewController
+                    //On montre le nouveau controller
+                   self.navigationController?.showDetailViewController(logIn, sender: self)
+                    
                 } else{
                     print("Error creating user : \(String(describing: Error?.localizedDescription))")
                 }
