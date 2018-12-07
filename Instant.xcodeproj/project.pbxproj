@@ -12,6 +12,10 @@
 		136FE7C621B98A4900AA2B43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 136FE7C521B98A4900AA2B43 /* GoogleService-Info.plist */; };
 		25EE129AF6AEAF8ABCD6B78A /* Pods_Instant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E0B46EAB5F699EAAA5E723 /* Pods_Instant.framework */; };
 		2E88C1155E774E9CCE849C75 /* Pods_InstantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E36813F189C9859853FBEE /* Pods_InstantUITests.framework */; };
+		67ADEE2F21B99BFD00BA900C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67ADEE2E21B99BFD00BA900C /* GoogleService-Info.plist */; };
+		67ADEE3121B99D1400BA900C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ADEE3021B99D1400BA900C /* HomeController.swift */; };
+		67ADEE3321B99D2300BA900C /* PelliculeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ADEE3221B99D2300BA900C /* PelliculeModel.swift */; };
+		67ADEE3521B99D3900BA900C /* PelliculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ADEE3421B99D3900BA900C /* PelliculeView.swift */; };
 		67D1077421AEEFF9002FCA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077321AEEFF9002FCA7F /* AppDelegate.swift */; };
 		67D1077621AEEFF9002FCA7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077521AEEFF9002FCA7F /* ViewController.swift */; };
 		67D1077921AEEFF9002FCA7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D1077721AEEFF9002FCA7F /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		136FE7C521B98A4900AA2B43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14E0B46EAB5F699EAAA5E723 /* Pods_Instant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE1988E14CA1ED6DFEAA09D /* Pods-InstantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstantTests/Pods-InstantTests.release.xcconfig"; sourceTree = "<group>"; };
+		67ADEE2E21B99BFD00BA900C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67ADEE3021B99D1400BA900C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		67ADEE3221B99D2300BA900C /* PelliculeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelliculeModel.swift; sourceTree = "<group>"; };
+		67ADEE3421B99D3900BA900C /* PelliculeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelliculeView.swift; sourceTree = "<group>"; };
 		67D1077021AEEFF9002FCA7F /* Instant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D1077321AEEFF9002FCA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67D1077521AEEFF9002FCA7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 		67D1077221AEEFF9002FCA7F /* Instant */ = {
 			isa = PBXGroup;
 			children = (
+				67ADEE2E21B99BFD00BA900C /* GoogleService-Info.plist */,
 				67D1077321AEEFF9002FCA7F /* AppDelegate.swift */,
 				67D1077521AEEFF9002FCA7F /* ViewController.swift */,
 				136FE7C321B9897900AA2B43 /* Acceuil.swift */,
@@ -129,6 +138,9 @@
 				136FE7C521B98A4900AA2B43 /* GoogleService-Info.plist */,
 				67D1077F21AEEFFB002FCA7F /* Info.plist */,
 				133CC40C21B990E2002059C6 /* RoundButton.swift */,
+				67ADEE3021B99D1400BA900C /* HomeController.swift */,
+				67ADEE3221B99D2300BA900C /* PelliculeModel.swift */,
+				67ADEE3421B99D3900BA900C /* PelliculeView.swift */,
 			);
 			path = Instant;
 			sourceTree = "<group>";
@@ -284,6 +296,7 @@
 			files = (
 				67D1077E21AEEFFB002FCA7F /* LaunchScreen.storyboard in Resources */,
 				136FE7C621B98A4900AA2B43 /* GoogleService-Info.plist in Resources */,
+				67ADEE2F21B99BFD00BA900C /* GoogleService-Info.plist in Resources */,
 				67D1077B21AEEFFB002FCA7F /* Assets.xcassets in Resources */,
 				67D1077921AEEFF9002FCA7F /* Main.storyboard in Resources */,
 			);
@@ -405,10 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67ADEE3521B99D3900BA900C /* PelliculeView.swift in Sources */,
 				133CC40D21B990E2002059C6 /* RoundButton.swift in Sources */,
 				67D1077621AEEFF9002FCA7F /* ViewController.swift in Sources */,
 				136FE7C421B9897900AA2B43 /* Acceuil.swift in Sources */,
 				67D1077421AEEFF9002FCA7F /* AppDelegate.swift in Sources */,
+				67ADEE3121B99D1400BA900C /* HomeController.swift in Sources */,
+				67ADEE3321B99D2300BA900C /* PelliculeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
