@@ -7,10 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class Acceuil: UIViewController {
     
-    override func viewDidLoad() {
-        
+    @IBAction func lunchLogInViewController(_ sender: Any) {
+        //On récupère Main.storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //On crée une instance d'acceuil à partir du storyboard
+        let acceuil = storyboard.instantiateViewController(withIdentifier: "login") as! LogIn
+        //On montre le nouveau controller
+        navigationController?.show(acceuil, sender: self)
+    }
+    
+    @IBAction func lunchSignUpViewController(_ sender: Any) {
+        //On récupère Main.storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //On crée une instance d'acceuil à partir du storyboard
+        let acceuil = storyboard.instantiateViewController(withIdentifier: "subscribe") as! SignUp
+        //On montre le nouveau controller
+        navigationController?.show(acceuil, sender: self)
     }
 }
