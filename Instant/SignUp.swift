@@ -18,20 +18,22 @@ class SignUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        username.setBottomBorder()
-        email.setBottomBorder()
-        password.setBottomBorder()
-        
     }
+    
+    @IBAction func boutonDismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func signUpAuthentification(sender : Any?){
         
-        if username.text != nil && email.text != nil && password.text != nil {
-            
+        if username.text != "" && email.text != "" && password.text != "" {
             // Création d'un USER
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ User, Error in
                 if Error == nil && User != nil{
                     print("User created !")
+                    Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!)
                     
                     // Création d'un USERNAME pour le USER
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -39,17 +41,9 @@ class SignUp: UIViewController {
                     changeRequest?.commitChanges{ Error in
                         if Error == nil{
                             print("User display name changed !")
-                            
-                            //On récupère Main.storyboard
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            //On crée une instance d'acceuil à partir du storyboard
-                            let signUp = storyboard.instantiateViewController(withIdentifier: "pellicule") as! ViewController
-                            //On montre le nouveau controller
-                            self.navigationController?.showDetailViewController(signUp, sender: self)
+                            self.performSegue(withIdentifier: "signup", sender: self)
                         }
                     }
-                    
-                    
                 } else{
                     print("Error creating user : \(String(describing: Error?.localizedDescription))")
                 }
