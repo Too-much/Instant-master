@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-eu-Fha" customClass="RoundButton" customModule="Instant" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-eu-Fha" customClass="RoundButton" customModule="Instant" customModuleProvider="target">
                                 <rect key="frame" x="38" y="694" width="299" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pnl-8A-l4l"/>
+                                    <constraint firstAttribute="width" constant="299" id="TGD-Hv-XET"/>
+                                </constraints>
                                 <state key="normal" title="Connection">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -41,6 +44,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f2L-Az-xOb" firstAttribute="bottom" secondItem="tBs-eu-Fha" secondAttribute="bottom" constant="54" id="Cqo-Tu-GWp"/>
+                            <constraint firstItem="tBs-eu-Fha" firstAttribute="leading" secondItem="f2L-Az-xOb" secondAttribute="leading" constant="38" id="Ggd-Yk-oTW"/>
+                            <constraint firstItem="f2L-Az-xOb" firstAttribute="trailing" secondItem="tBs-eu-Fha" secondAttribute="trailing" constant="38" id="jeb-hy-5mF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f2L-Az-xOb"/>
                     </view>
                     <navigationItem key="navigationItem" id="1LT-Rb-C9G"/>
@@ -105,33 +113,84 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-k6-5SR">
                                 <rect key="frame" x="28" y="48" width="22" height="22"/>
+                                <connections>
+                                    <action selector="reloadfromDB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P90-zQ-eD9"/>
+                                </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="cell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Egf-if-SPw">
+                                <rect key="frame" x="16" y="202" width="343" height="253"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="fDN-jy-Qu3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Cl-nR-beU">
+                                    <size key="itemSize" width="92" height="92"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="G4W-LF-S0K" customClass="PelliculeCollectionViewCell" customModule="Instant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkr-1Y-hsY" customClass="PelliculeView" customModule="Instant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="addButonAction:" destination="G4W-LF-S0K" eventType="touchUpInside" id="eUi-Ls-V23"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cellButton" destination="Jkr-1Y-hsY" id="q8g-Ja-ecL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="o9d-y1-Vsb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q8w-mc-Z2o"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwl-8J-n0Z" secondAttribute="trailing" constant="27" id="0cf-UY-zWj"/>
                             <constraint firstItem="YHO-k6-5SR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Hfr-3m-5Zv"/>
+                            <constraint firstItem="Egf-if-SPw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JaC-Vq-eRC"/>
                             <constraint firstItem="Rdz-pR-Frl" firstAttribute="top" secondItem="kyn-3h-QAr" secondAttribute="bottom" constant="8" id="QGK-B2-OKf"/>
                             <constraint firstItem="YHO-k6-5SR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="Xxw-en-cfc"/>
                             <constraint firstItem="kyn-3h-QAr" firstAttribute="top" secondItem="YHO-k6-5SR" secondAttribute="bottom" constant="42" id="fig-fx-bd6"/>
+                            <constraint firstItem="Egf-if-SPw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mAb-hh-hpy"/>
                             <constraint firstItem="qwl-8J-n0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="pe3-Wa-rvB"/>
+                            <constraint firstItem="Egf-if-SPw" firstAttribute="top" secondItem="Rdz-pR-Frl" secondAttribute="bottom" constant="8" id="t4n-pN-cqD"/>
                             <constraint firstItem="kyn-3h-QAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uKj-JQ-cqQ"/>
                             <constraint firstItem="Rdz-pR-Frl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xd9-6I-MRv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Egf-if-SPw" secondAttribute="trailing" constant="16" id="yfX-FG-2PY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="infoButton" destination="YHO-k6-5SR" id="El0-WK-dwX"/>
+                        <outlet property="pelliculeCollectionView" destination="Egf-if-SPw" id="IWT-SJ-GzN"/>
+                        <outlet property="pelliculeNameTF" destination="QER-Tf-dnC" id="kLM-q0-3hc"/>
                         <outlet property="popAddButton" destination="F8Z-o2-BIL" id="hfB-5u-zRb"/>
+                        <segue destination="9h6-tQ-dhF" kind="presentation" identifier="GoToAddPellStoryBoard" modalPresentationStyle="overCurrentContext" id="xpm-Ir-Dl8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <view opaque="NO" contentMode="scaleToFill" id="F8Z-o2-BIL">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="256"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="357" height="605"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50x-fk-Ccb" customClass="RoundButton" customModule="Instant" customModuleProvider="target">
-                            <rect key="frame" x="72" y="192" width="97" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="130" y="183" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Ajouter">
                                 <color key="titleColor" red="0.20426025989999999" green="0.46902221440000003" blue="0.96475917099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
@@ -140,25 +199,97 @@
                             </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Tf-dnC">
-                            <rect key="frame" x="72" y="113" width="97" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="130" y="118" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom de la pellicule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EM-j8-nGi">
-                            <rect key="frame" x="48" y="44" width="145" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="106" y="64" width="145" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="0.81276755136986301" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="9An-SJ-Co1"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="1866.4000000000001" y="23.645320197044335"/>
+        </scene>
+        <!--Add Pell Story Board-->
+        <scene sceneID="6dR-l8-PlB">
+            <objects>
+                <viewController storyboardIdentifier="addPellStoryBoard" id="9h6-tQ-dhF" customClass="addPellStoryBoard" customModule="Instant" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="OHO-q2-3Sp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OnW-mU-H2H">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-z9-S0H">
+                                    <rect key="frame" x="139" y="232" width="97" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voe-3l-b96" customClass="RoundButton" customModule="Instant" customModuleProvider="target">
+                                    <rect key="frame" x="139" y="310" width="97" height="30"/>
+                                    <state key="normal" title="Ajouter">
+                                        <color key="titleColor" red="0.20426025989999999" green="0.46902221440000003" blue="0.96475917099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addPellButton:" destination="9h6-tQ-dhF" eventType="touchUpInside" id="H5t-Pj-76V"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom de la pellicule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMT-RZ-Mp2">
+                                    <rect key="frame" x="115" y="142" width="145" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="145" id="KZX-uL-CuA"/>
+                                        <constraint firstAttribute="height" constant="21" id="Nc7-Md-NvW"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVb-KM-Bj6">
+                                    <rect key="frame" x="8" y="57" width="37" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="37" id="Ljs-j1-1Gc"/>
+                                        <constraint firstAttribute="height" constant="37" id="ygG-Qq-jay"/>
+                                    </constraints>
+                                    <state key="normal" image="croix"/>
+                                    <connections>
+                                        <action selector="closeAddPell:" destination="9h6-tQ-dhF" eventType="touchUpInside" id="0od-ij-ndN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="BKU-z9-S0H" firstAttribute="leading" secondItem="OnW-mU-H2H" secondAttribute="leading" constant="139" id="6Rk-3L-bIE"/>
+                                <constraint firstAttribute="trailing" secondItem="BKU-z9-S0H" secondAttribute="trailing" constant="139" id="E6X-iH-tto"/>
+                                <constraint firstItem="DMT-RZ-Mp2" firstAttribute="leading" secondItem="OnW-mU-H2H" secondAttribute="leading" constant="115" id="H65-VL-fZw"/>
+                                <constraint firstAttribute="trailing" secondItem="voe-3l-b96" secondAttribute="trailing" constant="139" id="Ike-dP-YOp"/>
+                                <constraint firstAttribute="trailing" secondItem="DMT-RZ-Mp2" secondAttribute="trailing" constant="115" id="Lmi-zI-xMf"/>
+                                <constraint firstItem="DMT-RZ-Mp2" firstAttribute="top" secondItem="OnW-mU-H2H" secondAttribute="top" constant="142" id="Pna-q4-h68"/>
+                                <constraint firstItem="BKU-z9-S0H" firstAttribute="top" secondItem="DMT-RZ-Mp2" secondAttribute="bottom" constant="69" id="dL1-lG-WWr"/>
+                                <constraint firstItem="voe-3l-b96" firstAttribute="top" secondItem="BKU-z9-S0H" secondAttribute="bottom" constant="48" id="o5a-Fs-Yog"/>
+                                <constraint firstItem="DVb-KM-Bj6" firstAttribute="top" secondItem="OnW-mU-H2H" secondAttribute="top" constant="57" id="tjh-gJ-CNW"/>
+                                <constraint firstItem="voe-3l-b96" firstAttribute="leading" secondItem="OnW-mU-H2H" secondAttribute="leading" constant="139" id="ygW-RL-2eg"/>
+                                <constraint firstItem="DVb-KM-Bj6" firstAttribute="leading" secondItem="OnW-mU-H2H" secondAttribute="leading" constant="8" id="zmE-uQ-5I3"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="pellNameTF" destination="BKU-z9-S0H" id="JL3-50-GfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91j-H5-GTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2988" y="13.300492610837439"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="umc-ec-P3m">
@@ -179,4 +310,7 @@
             <point key="canvasLocation" x="-104.8" y="35.467980295566505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="croix" width="90" height="90"/>
+    </resources>
 </document>

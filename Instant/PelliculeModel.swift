@@ -14,17 +14,17 @@ class Pellicule {
     var nbPhotos : Int  //le nombre de photos sur la pellicule
     var nom : String    //le nom de la pellicule
     var startDate : Date    //date de début de la pellicule
-    var icone : Int     //numero de l'icone de la pellicule (à définir...)
+    var icone : UIImage     //nom de l'icone de la pellicule (à définir...)
     
     
     //constructeur d'une pellicule
-    init( _state : Bool, _nom : String, _icone : Int ) {
+    init( _state : Bool, _nom : String, _icone : String ) {
         //initialisation des variables
         state = _state
         nbPhotos = 0    //lors de l'initialisation du pellicule, son nombre de photos est à 0
         nom = _nom
         startDate = Date.init() //prend la valeur de l'heure et la date actuelle
-        icone = _icone
+        icone = UIImage.init(imageLiteralResourceName: _icone)
         
     }
     

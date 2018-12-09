@@ -2,7 +2,7 @@
 //  Login.swift
 //  Instant
 //
-//  Created by Xavier de Cazenove on 06/12/2018.
+//  Created by Léonard Devincre on 07/12/2018.
 //  Copyright © 2018 Léonard Devincre. All rights reserved.
 //
 

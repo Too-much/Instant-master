@@ -10,6 +10,8 @@ import UIKit
 
 class PelliculeView : UIButton {
     
+    
+    
     //initialiseur
     required init?(coder aDecoder: NSCoder) {
         //initialisateur de la classe parente
@@ -17,6 +19,14 @@ class PelliculeView : UIButton {
         
         //Coins arrondis
         layer.cornerRadius = 5
+        
+        layer.borderWidth = 2
+        
+        layer.borderColor = UIColor.black.cgColor
+        
+        layer.backgroundColor = UIColor.lightGray.cgColor
+        
+        self.titleLabel?.textAlignment = NSTextAlignment.center
         
         //Padding a gauche et a droite
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
