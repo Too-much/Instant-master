@@ -32,6 +32,10 @@
 		13FF8AB421BD608A009CC540 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8AA321BD608A009CC540 /* IQUIView+Hierarchy.swift */; };
 		13FF8AB521BD608A009CC540 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8AA421BD608A009CC540 /* IQNSArray+Sort.swift */; };
 		13FF8AB721BD815F009CC540 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8AB621BD815F009CC540 /* CheckInternet.swift */; };
+		13FF8ABB21BDBC26009CC540 /* PelliculeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8ABA21BDBC26009CC540 /* PelliculeCollectionViewCell.swift */; };
+		13FF8ABD21BDBC4E009CC540 /* PelliculeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */; };
+		13FF8ABF21BDBC80009CC540 /* PelliculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */; };
+		13FF8AC121BDBCC9009CC540 /* addPelliculeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */; };
 		25EE129AF6AEAF8ABCD6B78A /* Pods_Instant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E0B46EAB5F699EAAA5E723 /* Pods_Instant.framework */; };
 		2E88C1155E774E9CCE849C75 /* Pods_InstantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E36813F189C9859853FBEE /* Pods_InstantUITests.framework */; };
 		67D1077421AEEFF9002FCA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077321AEEFF9002FCA7F /* AppDelegate.swift */; };
@@ -87,6 +91,10 @@
 		13FF8AA321BD608A009CC540 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		13FF8AA421BD608A009CC540 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		13FF8AB621BD815F009CC540 /* CheckInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInternet.swift; path = ../../../Downloads/CheckInternet/CheckInternet.swift; sourceTree = "<group>"; };
+		13FF8ABA21BDBC26009CC540 /* PelliculeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelliculeCollectionViewCell.swift; sourceTree = "<group>"; };
+		13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelliculeModel.swift; sourceTree = "<group>"; };
+		13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelliculeView.swift; sourceTree = "<group>"; };
+		13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPelliculeViewController.swift; sourceTree = "<group>"; };
 		14E0B46EAB5F699EAAA5E723 /* Pods_Instant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE1988E14CA1ED6DFEAA09D /* Pods-InstantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstantTests/Pods-InstantTests.release.xcconfig"; sourceTree = "<group>"; };
 		67D1077021AEEFF9002FCA7F /* Instant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +250,10 @@
 				13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */,
 				13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */,
 				13FF8AB621BD815F009CC540 /* CheckInternet.swift */,
+				13FF8ABA21BDBC26009CC540 /* PelliculeCollectionViewCell.swift */,
+				13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */,
+				13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */,
+				13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */,
 			);
 			path = Instant;
 			sourceTree = "<group>";
@@ -552,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FF8ABF21BDBC80009CC540 /* PelliculeView.swift in Sources */,
 				13FF8AB421BD608A009CC540 /* IQUIView+Hierarchy.swift in Sources */,
 				13C2374321BBEDCF000A98C8 /* ViewDesignable.swift in Sources */,
 				13FF8AB521BD608A009CC540 /* IQNSArray+Sort.swift in Sources */,
@@ -559,12 +572,15 @@
 				13FF8AB221BD608A009CC540 /* IQUIViewController+Additions.swift in Sources */,
 				13FF8AA821BD608A009CC540 /* IQBarButtonItem.swift in Sources */,
 				133CC40D21B990E2002059C6 /* ButtonDesignable.swift in Sources */,
+				13FF8AC121BDBCC9009CC540 /* addPelliculeViewController.swift in Sources */,
 				13FF8AB321BD608A009CC540 /* IQUITextFieldView+Additions.swift in Sources */,
 				133CC41121B99F85002059C6 /* LogIn.swift in Sources */,
 				13FF8AAC21BD608A009CC540 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				13FF8AB021BD608A009CC540 /* IQKeyboardManager.swift in Sources */,
 				13FF8AAF21BD608A009CC540 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				13FF8ABB21BDBC26009CC540 /* PelliculeCollectionViewCell.swift in Sources */,
 				13FF8AAA21BD608A009CC540 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				13FF8ABD21BDBC4E009CC540 /* PelliculeModel.swift in Sources */,
 				13FF8AB721BD815F009CC540 /* CheckInternet.swift in Sources */,
 				13C2374121BB54BD000A98C8 /* TextFieldDesignable.swift in Sources */,
 				13FF8AA621BD608A009CC540 /* IQPreviousNextView.swift in Sources */,
@@ -761,7 +777,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xavierdecazenove.Instant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -780,7 +796,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xavierdecazenove.Instant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

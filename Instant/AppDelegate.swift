@@ -23,17 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         
-        let db =  Firestore.firestore()
-        
-        db.collection("Pellicule").document("Laponie").setData([
-            "name" : "Ours polaire"
-        ]){ Error in
-            if Error == nil{
-                print("Succes document created")
-            } else{
-                print("\(String(describing: Error?.localizedDescription))")
-            }
-        }
+        Firestore.firestore()
         
         return true
     }
