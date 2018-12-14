@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         
         Firestore.firestore()
-        
+        Storage.storage()
         return true
     }
 

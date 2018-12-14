@@ -14,26 +14,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var cameraLuncher: UIButton!
     @IBOutlet var signOut : UIButton!
+    
     @IBOutlet weak var imageView: UIImageView!
-    
-
     @IBOutlet var pelliculeCollectionView: UICollectionView!
+    var user : UserProfile!
     
     
-    var pelArray: [Pellicule] = [Pellicule(_state: false, _nom: "addButton", _icone: "plus")]
-    var numPellicule : Int = 0
-    var chargementFinis : Bool = true
     
     //initialize an instance database
     let db =  Firestore.firestore()
-    
+    let storageRef = Storage.storage()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPelliculefromDB()
-        NotificationCenter.default.addObserver(self, selector: #selector(addPellicule), name: NSNotification.Name("addPellicule"), object: nil)
+        self.user = UserProfile(db: Firestore.firestore(), id : (Auth.auth().currentUser?.uid)!)
+        NotificationCenter.default.addObserver(self, selector: #selector(collectionViewReload), name: NSNotification.Name("reload") , object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadfromDB(_:)), name: NSNotification.Name("reloadFromDB"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(addPellicule), name: NSNotification.Name("addPellicule"), object: nil)
     }
     
     @objc func addPellicule (){
@@ -41,55 +41,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    func getPelliculefromDB(){
-        if chargementFinis {
-            chargementFinis=false
-            pelArray = []
-            //la première cellule sera le addbutton
-            pelArray.append(Pellicule(_state: false, _nom: "addButton", _icone: "plus"))
-            numPellicule = 0
-            //on récupère les documents sur le firestore
-            db.collection("Pellicule").getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        self.pelArray.append(Pellicule(_state: false, _nom: document.documentID, _icone: "appareil_photo" ))
-                        print("\(document.documentID) => \(document.data())")
-                        print(self.numPellicule)
-                        self.numPellicule = self.numPellicule + 1
-                    }
-                    self.pelliculeCollectionView.reloadData()
-                    print("comprend rien")
-                    self.chargementFinis = true
-                }
-            }
-        }
-        
-        
-    }
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print( pelArray.count)
-        print("YOOoOOOOOOO")
-        return pelArray.count
+        return user.tabPellicule.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        numPellicule = 0
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PelliculeCollectionViewCell
-        cell.displayContent(pellicule: pelArray[indexPath.row])
+        cell.displayContent(pellicule: user.tabPellicule[indexPath.row], pell_name: user.tabPellicule[indexPath.row].nom, pell_initDate: user.tabPellicule[indexPath.row].startDate)
+        
         return cell
     }
     
     @IBAction func reloadfromDB(_ sender: Any) {
-        getPelliculefromDB()
+        self.user = UserProfile(db: Firestore.firestore(), id : (Auth.auth().currentUser?.uid)!)
+        NotificationCenter.default.addObserver(self, selector: #selector(collectionViewReload), name: NSNotification.Name("reload") , object: nil)
+    }
+    
+    @objc func collectionViewReload(){
+        self.pelliculeCollectionView.reloadData()
     }
     
     
-    
-    
+
     
     @IBAction func takePhoto(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){

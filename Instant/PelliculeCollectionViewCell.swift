@@ -7,17 +7,21 @@
 //
 import UIKit
 
-class PelliculeCollectionViewCell: UICollectionViewCell {
+class PelliculeCollectionViewCell: UICollectionViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var cellButton: PelliculeView!
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    func displayContent(pellicule: Pellicule) {
+    func displayContent(pellicule: Pellicule, pell_name : String, pell_initDate : String) {
         if pellicule.nom == "addButton" {
             cellButton.setImage(pellicule.icone, for: .normal)
             cellButton.accessibilityIdentifier = "addButton"
         } else {
             cellButton.setImage(pellicule.icone, for: .normal)
-            cellButton.accessibilityIdentifier = "normalButton"
+            cellLabel.text = pell_name
+            dateLabel.text = pell_initDate
+            cellButton.accessibilityIdentifier = pell_name
         }
         
         
@@ -26,7 +30,8 @@ class PelliculeCollectionViewCell: UICollectionViewCell {
     @IBAction func addButonAction(_ sender: Any) {
         if cellButton.accessibilityIdentifier == "addButton" {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addPellicule"), object: nil)
+        } else{
+            
         }
     }
-    
 }

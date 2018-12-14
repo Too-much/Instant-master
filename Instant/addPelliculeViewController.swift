@@ -14,17 +14,21 @@ class addPellViewController : UIViewController {
     
     //initialize an instance database
     let db =  Firestore.firestore()
+    var user : UserProfile!
     
     @IBAction func closeAddPell(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func addPellButton(_ sender: Any) {
         //on récupère les informations et on les envoies dans la firebase
+        self.user = UserProfile(db: Firestore.firestore(), id : (Auth.auth().currentUser?.uid)!)
+        
         if(pellNameTF.text != nil)
         {
-            // Add a new document in collection "cities"
-            db.collection("Pellicule").document(pellNameTF.text!).setData([
+            
+            db.collection("users").document(user.id).collection("pellicule").document(pellNameTF.text!).setData([
                 "name": pellNameTF.text!,
+                "date_init": initDate(),
                 ]) { err in
                     if let err = err {
                         print("Error writing document: \(err)")
@@ -32,7 +36,16 @@ class addPellViewController : UIViewController {
                         print("Document successfully written!")
                     }
             }
+            NotificationCenter.default.post(name: NSNotification.Name("reloadFromDB"), object: nil)
         }
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+func initDate () -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    let date = Date.init()
+    let stringDate = formatter.string(from: date)
+    return stringDate
 }

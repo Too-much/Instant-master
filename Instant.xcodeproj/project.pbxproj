@@ -12,6 +12,7 @@
 		133CC40F21B99B61002059C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133CC40E21B99B61002059C6 /* GoogleService-Info.plist */; };
 		133CC41121B99F85002059C6 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CC41021B99F85002059C6 /* LogIn.swift */; };
 		133CC41321B99FC4002059C6 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CC41221B99FC4002059C6 /* SignUp.swift */; };
+		13B6390B21C1407B00992DD8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6390A21C1407B00992DD8 /* UserProfile.swift */; };
 		13C2374121BB54BD000A98C8 /* TextFieldDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */; };
 		13C2374321BBEDCF000A98C8 /* ViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */; };
 		13FF8AA521BD608A009CC540 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF8A8F21BD608A009CC540 /* IQTextView.swift */; };
@@ -70,6 +71,7 @@
 		133CC40E21B99B61002059C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		133CC41021B99F85002059C6 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		133CC41221B99FC4002059C6 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		13B6390A21C1407B00992DD8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesignable.swift; sourceTree = "<group>"; };
 		13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesignable.swift; sourceTree = "<group>"; };
 		13FF8A8F21BD608A009CC540 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */,
 				13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */,
 				13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */,
+				13B6390A21C1407B00992DD8 /* UserProfile.swift */,
 			);
 			path = Instant;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				13FF8AB221BD608A009CC540 /* IQUIViewController+Additions.swift in Sources */,
 				13FF8AA821BD608A009CC540 /* IQBarButtonItem.swift in Sources */,
 				133CC40D21B990E2002059C6 /* ButtonDesignable.swift in Sources */,
+				13B6390B21C1407B00992DD8 /* UserProfile.swift in Sources */,
 				13FF8AC121BDBCC9009CC540 /* addPelliculeViewController.swift in Sources */,
 				13FF8AB321BD608A009CC540 /* IQUITextFieldView+Additions.swift in Sources */,
 				133CC41121B99F85002059C6 /* LogIn.swift in Sources */,

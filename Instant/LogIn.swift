@@ -14,6 +14,7 @@ class LogIn: UIViewController {
     
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
+
     
     // CACHE TOP BAR
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,7 @@ class LogIn: UIViewController {
                 if Error == nil && User != nil{
                     print("User sign in !")
                     self.performSegue(withIdentifier: "login", sender: self)
+                    
                 } else{
                     print("Error creating user : \(String(describing: Error?.localizedDescription))")
                 }
@@ -58,6 +60,12 @@ class LogIn: UIViewController {
             alert("Error", message: "Please fill up all fields in order to login")
         }
     }
+    
+    
+    
+    
+    
+    
     
     func alert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

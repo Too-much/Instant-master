@@ -17,18 +17,18 @@ class PelliculeView : UIButton {
         super.init(coder : aDecoder)
         
         //Coins arrondis
-        layer.cornerRadius = 5
+        layer.cornerRadius = 8
         
-        layer.borderWidth = 2
+        //layer.borderWidth = 2
         
-        layer.borderColor = UIColor.black.cgColor
+        //layer.borderColor = UIColor.black.cgColor
         
-        layer.backgroundColor = UIColor.lightGray.cgColor
+        //layer.backgroundColor = UIColor.lightGray.cgColor
         
         self.titleLabel?.textAlignment = NSTextAlignment.center
         
         //Padding a gauche et a droite
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
 }

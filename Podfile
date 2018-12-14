@@ -10,6 +10,7 @@ target 'Instant' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
   target 'InstantTests' do
     inherit! :search_paths
