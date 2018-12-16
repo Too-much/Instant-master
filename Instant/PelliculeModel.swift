@@ -16,24 +16,56 @@ class Pellicule {
     var nom : String    //le nom de la pellicule
     var startDate : String    //date de début de la pellicule
     var icone : UIImage     //nom de l'icone de la pellicule (à définir...)
-    var tabPhotos : [StorageReference]!
-    
+    var downloadURL : [String]
+    var tabImage : [UIImage] = []
     
     //constructeur d'une pellicule
-    init( _state : Bool, _nom : String, _icone : String, _date : String ) {
+    init( _state : Bool, _nom : String, _icone : String, _date : String) {
         //initialisation des variables
-        state = _state
-        nbPhotos = 0    //lors de l'initialisation du pellicule, son nombre de photos est à 0
-        nom = _nom
-        startDate = _date //prend la valeur de l'heure et la date actuelle
-        icone = UIImage.init(imageLiteralResourceName: _icone)
-//        tabPhotos.append(Storage.storage().reference().child("im"))
+        self.state = _state
+        self.nbPhotos = 0    //lors de l'initialisation du pellicule, son nombre de photos est à 0
+        self.nom = _nom
+        self.startDate = _date //prend la valeur de l'heure et la date actuelle
+        self.icone = UIImage.init(imageLiteralResourceName: _icone)
+        self.downloadURL = []
+
+        _ = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!).collection("pellicule").document(self.nom).collection("images").getDocuments {(QuerySnapshot, Error) in
+            if Error != nil {
+                print("Error getting documents: \(String(describing: Error))")
+            } else {
+                for document in QuerySnapshot!.documents {
+                    self.downloadURL.append(document.get("downloadURL") as! String)
+                }
+            }
+        }
         
+        for urlDownload in self.downloadURL{
+            if let url = URL(string: urlDownload) {
+                downloadImage(from: url)
+            }
+        }
     }
-    
+
     //fonction qui indique que la pellicule est finis
     func terminatePellicule(){
         state = true
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.tabImage.append(UIImage(data: data)!)
+                NotificationCenter.default.post(name: NSNotification.Name("addImageView"), object: nil)
+            }
+        }
     }
     
 }

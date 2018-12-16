@@ -25,8 +25,7 @@ class addPellViewController : UIViewController {
         
         if(pellNameTF.text != nil)
         {
-            
-            db.collection("users").document(user.id).collection("pellicule").document(pellNameTF.text!).setData([
+        db.collection("users").document(user.id).collection("pellicule").document(pellNameTF.text!).setData([
                 "name": pellNameTF.text!,
                 "date_init": initDate(),
                 ]) { err in

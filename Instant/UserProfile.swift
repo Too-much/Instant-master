@@ -32,7 +32,8 @@ class UserProfile {
                 print("ERROR")
                 }
         }
-
+        
+        
         db.collection("users").document(self.id).collection("pellicule").getDocuments(){ (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
