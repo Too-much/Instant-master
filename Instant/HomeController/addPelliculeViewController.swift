@@ -9,12 +9,28 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class addPellViewController : UIViewController {
+protocol ChangeImageIcone {
+    func changeIcone(toIcone: UIImage)
+}
+
+class addPellViewController : UIViewController, ChangeImageIcone {
     @IBOutlet weak var pellNameTF: UITextField!
+    @IBOutlet weak var iconeButton: UIButton!
     
     //initialize an instance database
     let db =  Firestore.firestore()
     var user : UserProfile!
+    
+    func changeIcone(toIcone : UIImage) {
+        iconeButton.setImage(toIcone, for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "selectIconeSegue"){
+        let PellIconeController = segue.destination as? PellIconeController
+        PellIconeController?.delegate = self
+        }
+    }
     
     @IBAction func closeAddPell(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -28,6 +44,8 @@ class addPellViewController : UIViewController {
         db.collection("users").document(user.id).collection("pellicule").document(pellNameTF.text!).setData([
                 "name": pellNameTF.text!,
                 "date_init": initDate(),
+                "icon": iconeButton.image(for: .normal)?.accessibilityIdentifier ?? "appareil_photo",
+                "fini": false
                 ]) { err in
                     if let err = err {
                         print("Error writing document: \(err)")
@@ -39,12 +57,26 @@ class addPellViewController : UIViewController {
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func alert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 func initDate () -> String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    formatter.dateFormat = "yyyy-MM-dd"
     let date = Date.init()
     let stringDate = formatter.string(from: date)
     return stringDate
 }
+
+

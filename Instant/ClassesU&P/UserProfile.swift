@@ -16,7 +16,8 @@ class UserProfile {
     var id : String!
     var name : String!
     var email : String!
-    var tabPellicule : [Pellicule] = [Pellicule(_state: false, _nom: "addButton", _icone: "plus", _date : "")]
+    var tabPellicule : [Pellicule] = []
+    var tabHistoric : [Pellicule] = []
     
     init(db : Firestore, id : String) {
         self.id = id
@@ -33,15 +34,22 @@ class UserProfile {
                 }
         }
         
-        
+        self.tabPellicule.append(Pellicule(_state: false, _nom: "addButton", _icone: "plus", _date : ""))
         db.collection("users").document(self.id).collection("pellicule").getDocuments(){ (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    self.tabPellicule.append(Pellicule(_state: false, _nom: document.get("name") as! String, _icone: "appareil_photo", _date : document.get("date_init") as! String ))
+                    if document.get("fini") as! Bool == false{
+                         self.tabPellicule.append(Pellicule(_state: false, _nom: document.get("name") as! String, _icone: document.get("icon") as! String, _date : document.get("date_init") as! String ))
+                    }
+                    else{
+                        print("*********")
+                        self.tabHistoric.append(Pellicule(_state: true, _nom: document.get("name") as! String, _icone: document.get("icon") as! String, _date : document.get("date_init") as! String ))
+                    }
                 }
                 NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("reloadHistoricCollectionView"), object: nil)
             }
         }
     }

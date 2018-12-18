@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		13052D8021BC233D00572ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13052D7F21BC233D00572ABB /* Assets.xcassets */; };
+		130F05B421C7F5660002FFEE /* PellIconeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F05B321C7F5660002FFEE /* PellIconeController.swift */; };
+		130F05B621C7F5980002FFEE /* PellIconeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F05B521C7F5980002FFEE /* PellIconeViewCell.swift */; };
+		130F05B821C808A60002FFEE /* ImageViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F05B721C808A60002FFEE /* ImageViewDesignable.swift */; };
+		130F05BA21C80FDD0002FFEE /* HistoricController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F05B921C80FDD0002FFEE /* HistoricController.swift */; };
+		130F05BC21C812A20002FFEE /* HistoricViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F05BB21C812A20002FFEE /* HistoricViewCell.swift */; };
 		133CC40D21B990E2002059C6 /* ButtonDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CC40C21B990E2002059C6 /* ButtonDesignable.swift */; };
 		133CC40F21B99B61002059C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133CC40E21B99B61002059C6 /* GoogleService-Info.plist */; };
 		133CC41121B99F85002059C6 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CC41021B99F85002059C6 /* LogIn.swift */; };
 		133CC41321B99FC4002059C6 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CC41221B99FC4002059C6 /* SignUp.swift */; };
+		134CE44D21C90C8B0095FF2F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134CE44C21C90C8B0095FF2F /* Account.swift */; };
 		13B6390B21C1407B00992DD8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6390A21C1407B00992DD8 /* UserProfile.swift */; };
 		13C2374121BB54BD000A98C8 /* TextFieldDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */; };
 		13C2374321BBEDCF000A98C8 /* ViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */; };
@@ -40,7 +46,7 @@
 		25EE129AF6AEAF8ABCD6B78A /* Pods_Instant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E0B46EAB5F699EAAA5E723 /* Pods_Instant.framework */; };
 		2E88C1155E774E9CCE849C75 /* Pods_InstantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E36813F189C9859853FBEE /* Pods_InstantUITests.framework */; };
 		67D1077421AEEFF9002FCA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077321AEEFF9002FCA7F /* AppDelegate.swift */; };
-		67D1077621AEEFF9002FCA7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077521AEEFF9002FCA7F /* ViewController.swift */; };
+		67D1077621AEEFF9002FCA7F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1077521AEEFF9002FCA7F /* HomeController.swift */; };
 		67D1077921AEEFF9002FCA7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D1077721AEEFF9002FCA7F /* Main.storyboard */; };
 		67D1077E21AEEFFB002FCA7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D1077C21AEEFFB002FCA7F /* LaunchScreen.storyboard */; };
 		67D1078921AEEFFB002FCA7F /* InstantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1078821AEEFFB002FCA7F /* InstantTests.swift */; };
@@ -67,10 +73,16 @@
 
 /* Begin PBXFileReference section */
 		13052D7F21BC233D00572ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		130F05B321C7F5660002FFEE /* PellIconeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PellIconeController.swift; sourceTree = "<group>"; };
+		130F05B521C7F5980002FFEE /* PellIconeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PellIconeViewCell.swift; sourceTree = "<group>"; };
+		130F05B721C808A60002FFEE /* ImageViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDesignable.swift; sourceTree = "<group>"; };
+		130F05B921C80FDD0002FFEE /* HistoricController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricController.swift; sourceTree = "<group>"; };
+		130F05BB21C812A20002FFEE /* HistoricViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricViewCell.swift; sourceTree = "<group>"; };
 		133CC40C21B990E2002059C6 /* ButtonDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDesignable.swift; sourceTree = "<group>"; };
 		133CC40E21B99B61002059C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		133CC41021B99F85002059C6 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		133CC41221B99FC4002059C6 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		134CE44C21C90C8B0095FF2F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		13B6390A21C1407B00992DD8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesignable.swift; sourceTree = "<group>"; };
 		13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesignable.swift; sourceTree = "<group>"; };
@@ -101,7 +113,7 @@
 		1EE1988E14CA1ED6DFEAA09D /* Pods-InstantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstantTests/Pods-InstantTests.release.xcconfig"; sourceTree = "<group>"; };
 		67D1077021AEEFF9002FCA7F /* Instant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D1077321AEEFF9002FCA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67D1077521AEEFF9002FCA7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67D1077521AEEFF9002FCA7F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		67D1077821AEEFF9002FCA7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67D1077D21AEEFFB002FCA7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67D1077F21AEEFFB002FCA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +160,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130F05BD21C8167C0002FFEE /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				133CC40C21B990E2002059C6 /* ButtonDesignable.swift */,
+				13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */,
+				13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */,
+				130F05B721C808A60002FFEE /* ImageViewDesignable.swift */,
+			);
+			path = Designable;
+			sourceTree = "<group>";
+		};
+		130F05BE21C8169D0002FFEE /* ConnectionController */ = {
+			isa = PBXGroup;
+			children = (
+				134CE44C21C90C8B0095FF2F /* Account.swift */,
+				133CC41021B99F85002059C6 /* LogIn.swift */,
+				133CC41221B99FC4002059C6 /* SignUp.swift */,
+			);
+			path = ConnectionController;
+			sourceTree = "<group>";
+		};
+		130F05BF21C816C70002FFEE /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				13FF8ABA21BDBC26009CC540 /* PelliculeCollectionViewCell.swift */,
+				13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */,
+				67D1077521AEEFF9002FCA7F /* HomeController.swift */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		130F05C021C8170F0002FFEE /* HistoricController */ = {
+			isa = PBXGroup;
+			children = (
+				130F05B921C80FDD0002FFEE /* HistoricController.swift */,
+				130F05BB21C812A20002FFEE /* HistoricViewCell.swift */,
+			);
+			path = HistoricController;
+			sourceTree = "<group>";
+		};
+		130F05C121C817290002FFEE /* PellIconeController */ = {
+			isa = PBXGroup;
+			children = (
+				130F05B321C7F5660002FFEE /* PellIconeController.swift */,
+				130F05B521C7F5980002FFEE /* PellIconeViewCell.swift */,
+			);
+			path = PellIconeController;
+			sourceTree = "<group>";
+		};
+		130F05C321C8176E0002FFEE /* ClassesU&P */ = {
+			isa = PBXGroup;
+			children = (
+				13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */,
+				13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */,
+				13B6390A21C1407B00992DD8 /* UserProfile.swift */,
+			);
+			path = "ClassesU&P";
+			sourceTree = "<group>";
+		};
 		13FF8A8D21BD608A009CC540 /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,25 +309,20 @@
 		67D1077221AEEFF9002FCA7F /* Instant */ = {
 			isa = PBXGroup;
 			children = (
-				13FF8A8D21BD608A009CC540 /* IQKeyboardManagerSwift */,
-				133CC40E21B99B61002059C6 /* GoogleService-Info.plist */,
 				67D1077321AEEFF9002FCA7F /* AppDelegate.swift */,
-				67D1077521AEEFF9002FCA7F /* ViewController.swift */,
 				67D1077721AEEFF9002FCA7F /* Main.storyboard */,
 				13052D7F21BC233D00572ABB /* Assets.xcassets */,
 				67D1077C21AEEFFB002FCA7F /* LaunchScreen.storyboard */,
+				130F05BE21C8169D0002FFEE /* ConnectionController */,
+				130F05BF21C816C70002FFEE /* HomeController */,
+				130F05C321C8176E0002FFEE /* ClassesU&P */,
+				130F05C021C8170F0002FFEE /* HistoricController */,
+				130F05C121C817290002FFEE /* PellIconeController */,
+				130F05BD21C8167C0002FFEE /* Designable */,
+				133CC40E21B99B61002059C6 /* GoogleService-Info.plist */,
 				67D1077F21AEEFFB002FCA7F /* Info.plist */,
-				133CC41021B99F85002059C6 /* LogIn.swift */,
-				133CC41221B99FC4002059C6 /* SignUp.swift */,
-				133CC40C21B990E2002059C6 /* ButtonDesignable.swift */,
-				13C2374021BB54BD000A98C8 /* TextFieldDesignable.swift */,
-				13C2374221BBEDCF000A98C8 /* ViewDesignable.swift */,
+				13FF8A8D21BD608A009CC540 /* IQKeyboardManagerSwift */,
 				13FF8AB621BD815F009CC540 /* CheckInternet.swift */,
-				13FF8ABA21BDBC26009CC540 /* PelliculeCollectionViewCell.swift */,
-				13FF8ABC21BDBC4E009CC540 /* PelliculeModel.swift */,
-				13FF8ABE21BDBC80009CC540 /* PelliculeView.swift */,
-				13FF8AC021BDBCC9009CC540 /* addPelliculeViewController.swift */,
-				13B6390A21C1407B00992DD8 /* UserProfile.swift */,
 			);
 			path = Instant;
 			sourceTree = "<group>";
@@ -515,6 +581,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/WhatsNewKit/WhatsNewKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -528,6 +595,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WhatsNewKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -567,15 +635,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130F05B821C808A60002FFEE /* ImageViewDesignable.swift in Sources */,
 				13FF8ABF21BDBC80009CC540 /* PelliculeView.swift in Sources */,
+				130F05B421C7F5660002FFEE /* PellIconeController.swift in Sources */,
 				13FF8AB421BD608A009CC540 /* IQUIView+Hierarchy.swift in Sources */,
 				13C2374321BBEDCF000A98C8 /* ViewDesignable.swift in Sources */,
+				130F05BA21C80FDD0002FFEE /* HistoricController.swift in Sources */,
 				13FF8AB521BD608A009CC540 /* IQNSArray+Sort.swift in Sources */,
 				133CC41321B99FC4002059C6 /* SignUp.swift in Sources */,
 				13FF8AB221BD608A009CC540 /* IQUIViewController+Additions.swift in Sources */,
 				13FF8AA821BD608A009CC540 /* IQBarButtonItem.swift in Sources */,
 				133CC40D21B990E2002059C6 /* ButtonDesignable.swift in Sources */,
 				13B6390B21C1407B00992DD8 /* UserProfile.swift in Sources */,
+				130F05B621C7F5980002FFEE /* PellIconeViewCell.swift in Sources */,
 				13FF8AC121BDBCC9009CC540 /* addPelliculeViewController.swift in Sources */,
 				13FF8AB321BD608A009CC540 /* IQUITextFieldView+Additions.swift in Sources */,
 				133CC41121B99F85002059C6 /* LogIn.swift in Sources */,
@@ -583,6 +655,7 @@
 				13FF8AB021BD608A009CC540 /* IQKeyboardManager.swift in Sources */,
 				13FF8AAF21BD608A009CC540 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				13FF8ABB21BDBC26009CC540 /* PelliculeCollectionViewCell.swift in Sources */,
+				134CE44D21C90C8B0095FF2F /* Account.swift in Sources */,
 				13FF8AAA21BD608A009CC540 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				13FF8ABD21BDBC4E009CC540 /* PelliculeModel.swift in Sources */,
 				13FF8AB721BD815F009CC540 /* CheckInternet.swift in Sources */,
@@ -590,11 +663,12 @@
 				13FF8AA621BD608A009CC540 /* IQPreviousNextView.swift in Sources */,
 				13FF8AA521BD608A009CC540 /* IQTextView.swift in Sources */,
 				13FF8AAB21BD608A009CC540 /* IQInvocation.swift in Sources */,
-				67D1077621AEEFF9002FCA7F /* ViewController.swift in Sources */,
+				67D1077621AEEFF9002FCA7F /* HomeController.swift in Sources */,
 				13FF8AAD21BD608A009CC540 /* IQKeyboardManagerConstants.swift in Sources */,
 				67D1077421AEEFF9002FCA7F /* AppDelegate.swift in Sources */,
 				13FF8AB121BD608A009CC540 /* IQUIScrollView+Additions.swift in Sources */,
 				13FF8AA721BD608A009CC540 /* IQTitleBarButtonItem.swift in Sources */,
+				130F05BC21C812A20002FFEE /* HistoricViewCell.swift in Sources */,
 				13FF8AA921BD608A009CC540 /* IQToolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

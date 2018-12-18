@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Firestore.firestore()
         Storage.storage()
+        
+        UITabBar.appearance().tintColor = UIColor.orange
+        //UITabBar.appearance().backgroundColor = UIColor.orange
         return true
     }
 

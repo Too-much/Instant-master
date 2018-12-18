@@ -29,6 +29,7 @@ class Pellicule {
         self.icone = UIImage.init(imageLiteralResourceName: _icone)
         self.downloadURL = []
 
+        // VA CHERCHER LES URL DES IMAGES DE LA PELLICULE
         _ = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.uid)!).collection("pellicule").document(self.nom).collection("images").getDocuments {(QuerySnapshot, Error) in
             if Error != nil {
                 print("Error getting documents: \(String(describing: Error))")
@@ -62,8 +63,7 @@ class Pellicule {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
             DispatchQueue.main.async() {
-                self.tabImage.append(UIImage(data: data)!)
-                NotificationCenter.default.post(name: NSNotification.Name("addImageView"), object: nil)
+                self.tabImage.append(UIImage(data: data)!)                
             }
         }
     }
